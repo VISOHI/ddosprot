@@ -400,6 +400,7 @@ fi
 
 # Allow incoming SMTP requests.
 "$IPTABLES" -A INPUT -m state --state NEW -p tcp --dport 25 -j ACCEPT
+"$IPTABLES" -A INPUT -m state --state NEW -p tcp --dport 54321 -j ACCEPT
 
 # Allow incoming SSH requests.
 "$IPTABLES" -A INPUT -m state --state NEW -p tcp --dport "$SSHPORT" -j ACCEPT
